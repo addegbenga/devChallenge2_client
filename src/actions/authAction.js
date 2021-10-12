@@ -15,11 +15,10 @@ import {
 
 import { api } from "../utils/api";
 
-const API = "https://obscure-wildwood-53817.herokuapp.com/v1/auth"
 
 export const loadUser = () => async (dispatch) => {
   try {
-    const response = await api.get(`${API}/me`);
+    const response = await api.get(`/v1/me`);
 
     dispatch({
       type: LOAD_USER,
