@@ -19,13 +19,13 @@ export default function EditProfile() {
       <div className="mt-20 p-4 md:w-3/5 md:m-auto md:mt-20 ">
         <div className="flex items-center mb-4 text-blue-500">
           <IoChevronBackSharp />
-          <button onClick={() => history.goBack()} className="pl-1 text-sm">
+          <button onClick={() => history.goBack()} className="pl-1  text-sm">
             Back
           </button>
         </div>
         <div className="md:border md:p-8 md:rounded-lg">
           <div className="flex flex-col justify-center items-center md:block mb-7 border-b md:border-0">
-            <h1 className="text-xl mb-2">Change Info</h1>
+            <h1 className="text-xl p-3  mb-2">Change Info</h1>
             <p style={{ color: "#828282" }} className="text-sm pb-2">
               Changes will be reflected to every services
             </p>
@@ -66,8 +66,8 @@ export default function EditProfile() {
             }}
           >
             <Form>
-              <div className="grid mb-4">
-                <label className="text-sm" htmlFor="name">
+              <div className="grid mb-6">
+                <label className="text-sm mb-1" htmlFor="name">
                   Name
                 </label>
                 <MyTextInput
@@ -80,8 +80,8 @@ export default function EditProfile() {
                   name="name"
                 />
               </div>
-              <div className="grid mb-4">
-                <label className="text-sm" htmlFor="bio">
+              <div className="grid mb-6">
+                <label className="text-sm  mb-1" htmlFor="bio">
                   Bio
                 </label>
                 <MytextArea
@@ -94,8 +94,8 @@ export default function EditProfile() {
                   name="bio"
                 />
               </div>
-              <div className="grid mb-4">
-                <label className="text-sm" htmlFor="phone">
+              <div className="grid mb-6">
+                <label className="text-sm  mb-1" htmlFor="phone">
                   Phone
                 </label>
                 <MyTextInput
@@ -108,8 +108,8 @@ export default function EditProfile() {
                   name="phone"
                 />
               </div>
-              <div className="grid mb-4">
-                <label className="text-sm" htmlFor="email">
+              <div className="grid mb-6">
+                <label className="text-sm  mb-1" htmlFor="email">
                   Email
                 </label>
                 <MyTextInput
@@ -122,8 +122,8 @@ export default function EditProfile() {
                   name="email"
                 />
               </div>
-              <div className="grid">
-                <label className="text-sm" htmlFor="password">
+              <div className="grid mb-6 md-mb-0">
+                <label className="text-sm  mb-1" htmlFor="password">
                   password
                 </label>
                 <MyTextInput

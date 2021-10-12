@@ -22,7 +22,7 @@ export default function Navbar() {
                   <Popover.Button className="ml-2 flex items-center  ">
                     <img
                       src={avatar}
-                      className="w-6 h-6 rounded mr-1"
+                      className="w-8 h-8 rounded mr-1"
                       alt="avatar"
                     />
                     <div className="flex items-center hidden md:block">
