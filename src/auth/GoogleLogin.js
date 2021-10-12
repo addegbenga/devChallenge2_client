@@ -9,6 +9,7 @@ export default function Google() {
   const dispatch = useDispatch();
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
   const responseGoogle = (response) => {
+    console.log(response)
     dispatch(googleLogin({ tokenId: response.tokenId }));
   };
 
