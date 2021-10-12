@@ -1,15 +1,20 @@
 import React from "react";
 import { GoogleLogin } from "react-google-login";
 import { googleLogin } from "../actions/authAction";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Redirect } from "react-router-dom";
 import { AiOutlineGoogle } from "react-icons/ai";
 
 export default function Google() {
   const dispatch = useDispatch();
+  const isAuth = useSelector((state) => state.auth.isAuthenticated);
   const responseGoogle = (response) => {
-    console.log(response);
     dispatch(googleLogin({ tokenId: response.tokenId }));
   };
+
+  if (isAuth) {
+    return <Redirect to="/profile" />;
+  }
 
   return (
     <div>
