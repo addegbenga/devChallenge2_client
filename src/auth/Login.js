@@ -73,7 +73,7 @@ export default function Login() {
                   placeholder="Email"
                   className="border p-4 pl-8 text-sm rounded"
                 />
-                <div className="absolute top-4.5 left-2">
+                <div className="absolute top-5 left-2">
                   <MdEmail color="#828282" />
                 </div>
               </div>
