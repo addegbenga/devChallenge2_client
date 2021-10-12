@@ -3,19 +3,18 @@ import { GoogleLogin } from "react-google-login";
 // import { googleLogin } from "../actions/authAction";
 import { AiOutlineGoogle } from "react-icons/ai";
 
-const apiKey =
-  "1045330239037-vsgml53lumroodg3h4aec902pf6kdqq6.apps.googleusercontent.com";
+
 export default function Google() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const responseGoogle = (response) => {
-    console.log(response.tokenId);
-    // dispatch(googleLogin({ tokenId: response.tokenId }));
+    console.log(response);
+    dispatch(googleLogin({ tokenId: response.tokenId }));
   };
 
   return (
     <div>
       <GoogleLogin
-        clientId={apiKey}
+        clientId={process.env.REACT_APP_GOOGLE_TOKEN_ID}
         render={(renderProps) => (
           <button
             className="p-2 border mr-3 rounded-full"
