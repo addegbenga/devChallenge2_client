@@ -1,8 +1,8 @@
 import React from "react";
 import { GoogleLogin } from "react-google-login";
-// import { googleLogin } from "../actions/authAction";
+import { googleLogin } from "../actions/authAction";
+import { useDispatch } from "react-redux";
 import { AiOutlineGoogle } from "react-icons/ai";
-
 
 export default function Google() {
   const dispatch = useDispatch();
