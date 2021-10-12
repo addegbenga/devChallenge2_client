@@ -19,7 +19,7 @@ export default function Google() {
   return (
     <div>
       <GoogleLogin
-        clientId={process.env.GOOGLE_TOKEN_ID}
+        clientId={process.env.REACT_APP_GOOGLE_TOKEN_ID}
         render={(renderProps) => (
           <button
             className="p-2 border mr-3 rounded-full"
