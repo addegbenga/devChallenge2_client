@@ -41,7 +41,7 @@ export default function Login() {
           <img src={logo} alt="logo" />
         </div>
 
-        <h1 className="mb-6 mt-20">Login to your Account</h1>
+        <h1 className="mb-6 mt-24">Login to your Account</h1>
         <div>
           <Formik
             initialValues={{
@@ -71,29 +71,29 @@ export default function Login() {
                   name="email"
                   type="email"
                   placeholder="Email"
-                  className="border p-2 pl-8 text-sm rounded"
+                  className="border p-4 pl-8 text-sm rounded"
                 />
                 <div className="absolute top-2.5 left-2">
                   <MdEmail color="#828282" />
                 </div>
               </div>
-              <div className="grid my-3 relative">
+              <div className="grid my-5 relative">
                 <MyTextInput
                   type="password"
                   placeholder="Password"
                   name="password"
-                  className="border  p-2 pl-8 text-sm rounded"
+                  className="border  p-4 pl-8 text-sm rounded"
                 />
                 <div className="absolute top-2.5 left-2">
                   <MdLock color="#828282" />
                 </div>
               </div>
               {loading ? (
-                <button className="w-full text-white text-sm font-semibold p-1 rounded mb-5  bg-blue-500">
+                <button className="w-full text-white text-sm font-semibold p-3 rounded mb-5  bg-blue-500">
                   Loading...
                 </button>
               ) : (
-                <button className="w-full text-white text-sm font-semibold p-1 rounded mb-5  bg-blue-500">
+                <button className="w-full text-white text-sm font-semibold p-3 rounded mb-5  bg-blue-500">
                   Login
                 </button>
               )}
