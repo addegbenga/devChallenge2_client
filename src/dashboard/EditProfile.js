@@ -72,7 +72,7 @@ export default function EditProfile() {
                 </label>
                 <MyTextInput
                   style={{ fontSize: "13px" }}
-                  className="border p-2 rounded"
+                  className="border p-3 rounded"
                   placeholder="Enter your name"
                   type="text"
                   id="name"
@@ -86,9 +86,9 @@ export default function EditProfile() {
                 </label>
                 <MytextArea
                   style={{ fontSize: "13px" }}
-                  className="border p-2  rounded"
+                  className="border p-3  rounded"
                   placeholder="Enter your bio"
-                  rows="3"
+                  rows="7"
                   type="text"
                   id="bio"
                   name="bio"
@@ -101,7 +101,7 @@ export default function EditProfile() {
                 <MyTextInput
                   style={{ fontSize: "13px" }}
                   placeholder="Enter your number"
-                  className="p-2 border rounded"
+                  className="p-3 border rounded"
                   type="number"
                   autoComplete="true"
                   id="phone"
@@ -115,7 +115,7 @@ export default function EditProfile() {
                 <MyTextInput
                   autoComplete="true"
                   style={{ fontSize: "13px" }}
-                  className="p-2 border rounded"
+                  className="p-3 border rounded"
                   placeholder="Enter your email"
                   type="email"
                   id="email"
@@ -129,7 +129,7 @@ export default function EditProfile() {
                 <MyTextInput
                   autoComplete="true"
                   style={{ fontSize: "13px" }}
-                  className="p-2 border rounded "
+                  className="p-3 border rounded "
                   placeholder="Enter your new password"
                   type="password"
                   id="password"

@@ -12,7 +12,7 @@ export default function Navbar() {
   const dispatch = useDispatch();
   return (
     <div className="fixed w-full bg-white z-10 top-0 ">
-      <div className="bg-white border-b py-4">
+      <div className="bg-white border-b py-6">
         <div className="flex justify-between w-11/12 m-auto">
           <img src={logo} alt="logo" />
           <div className="flex items-center relative">
