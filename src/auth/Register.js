@@ -95,29 +95,29 @@ export default function Register() {
                   type="email"
                   placeholder="Email"
                   required
-                  className="border p-2 pl-8 text-sm rounded"
+                  className="border p-4 pl-8 text-sm rounded"
                 />
-                <div className="absolute top-2.5 left-2">
+                <div className="absolute top-5 left-2">
                   <MdEmail color="#828282" />
                 </div>
               </div>
-              <div className="grid relative my-4">
+              <div className="grid relative my-6">
                 <MyTextInput
                   name="password"
                   type="password"
                   placeholder="Password"
-                  className="border p-2 pl-8 text-sm rounded"
+                  className="border p-4 pl-8 text-sm rounded"
                 />
-                <div className="absolute top-2.5 left-2">
+                <div className="absolute top-5 left-2">
                   <MdLock color="#828282" />
                 </div>
               </div>
               {loading ? (
-                <button className="w-full text-white text-sm font-semibold p-1 rounded mb-5  bg-blue-500">
+                <button className="w-full text-white text-sm font-semibold p-3 rounded mb-5  bg-blue-500">
                   loading
                 </button>
               ) : (
-                <button className="w-full text-white text-sm font-semibold p-1 rounded mb-5  bg-blue-500">
+                <button className="w-full text-white text-sm font-semibold p-3 rounded mb-5  bg-blue-500">
                   Start coding now
                 </button>
               )}
