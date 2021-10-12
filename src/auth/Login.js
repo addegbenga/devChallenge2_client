@@ -89,11 +89,11 @@ export default function Login() {
                 </div>
               </div>
               {loading ? (
-                <button type="button" className="w-full text-white text-sm font-semibold p-1 rounded mb-5  bg-blue-500">
+                <button className="w-full text-white text-sm font-semibold p-1 rounded mb-5  bg-blue-500">
                   Loading...
                 </button>
               ) : (
-                <button type="button"  className="w-full text-white text-sm font-semibold p-1 rounded mb-5  bg-blue-500">
+                <button className="w-full text-white text-sm font-semibold p-1 rounded mb-5  bg-blue-500">
                   Login
                 </button>
               )}
