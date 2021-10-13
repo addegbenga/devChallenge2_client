@@ -79,26 +79,27 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 $ git clone git@github.com:addegbenga/devChallenge2_client.git
 
 ## Add your env variable for your client code
-
 $ REACT_APP_GOOGLE_TOKEN_ID = YOUR_CLIENT_ID FROM GOOGLE DEVELOPER 
+
+# Install dependencies for client code
+$ npm install
+
+# Run Your client code
+$ npm start
 
 #Clone this repository for server code
 $ git clone git@github.com:addegbenga/devChallenge2
 
 ## Add Your environment variables for the server code
-
 $ MONGO_URI= YOUR MONGO URL
 
 $ JWT_SECRET= mysecret
 
 $ GOOGLE_CLIENT_ID = YOUR_CLIENT_ID FROM GOOGLE DEVELOPER CONSOLE
 
-
-
-
-# Install dependencies
+# Install dependencies for server code
 $ npm install
 
-# Run the app
+# Run Your server code
 $ npm start
 ```
