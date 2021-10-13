@@ -40,7 +40,7 @@
 
 ## Overview
 
-![screenshot](https://raw.githubusercontent.com/addegbenga/devChallenge2/main/public/authshot.png?raw=true")
+![screenshot](https://raw.githubusercontent.com/addegbenga/devChallenge2_client/main/public/authshot.png?raw=true")
 
 Introduce your projects by taking a screenshot, video recordings or a gif. Try to tell us about the solution you built by answering the following:
 
