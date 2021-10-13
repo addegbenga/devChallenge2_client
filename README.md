@@ -88,7 +88,7 @@ $ npm install
 $ npm start
 
 #Clone this repository for server code
-$ git clone git@github.com:addegbenga/devChallenge2
+$ git clone git@github.com:addegbenga/devChallenge1
 
 ## Add Your environment variables for the server code
 $ MONGO_URI= YOUR MONGO URL
