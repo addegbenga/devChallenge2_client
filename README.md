@@ -42,15 +42,22 @@
 
 ![screenshot](https://raw.githubusercontent.com/addegbenga/devChallenge2_client/main/public/authshot.png?raw=true")
 
-Introduce your projects by taking a screenshot, video recordings or a gif. Try to tell us about the solution you built by answering the following:
 
-- Where can I see your demo?
+- Working Demo
 
     <a href="https://myprofile007.netlify.app">
       Demo
     </a>
 
-- What was your experience building it.
+- My Little Experience Building this Project.
+
+Building this project has sharpen my fullstack dev skill the more i got to work with React and Redux on the frontend and Express and mongoDB on the backend gained more experience on using google development console for social authorization and handling callback when a user is Authorized this was a challenge for me at first because not specifying the callback Uri in production will throw a Mismatch error.
+I got familiar with deployment of SPA application to Netlify and various configuration to make so you dont get a NotFound error when you refresh other pages of your application.
+
+Alot of experience gained from this little project and also i will be adding other features in my spare time.
+
+Moving on i will keep working and building interseting stuff so watch out for me.
+Thank you for reading to the end.
 
 
 
@@ -63,6 +70,7 @@ Introduce your projects by taking a screenshot, video recordings or a gif. Try t
 - [Nodejs](https://nodejs.org/en/)
 - [Mongodb](https://www.mongodb.com/)
 - [Tailwind](https://tailwindcss.com/)
+- [Redux]
 
 ## Features
 
