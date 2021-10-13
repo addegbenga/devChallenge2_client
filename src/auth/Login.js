@@ -71,10 +71,10 @@ export default function Login() {
                   name="email"
                   type="email"
                   placeholder="Email"
-                  className="border p-4 pl-8 text-sm rounded"
+                  className="border p-3.5 pl-8 text-sm rounded"
                 />
-                <div className="absolute top-5 left-2">
-                  <MdEmail color="#828282" />
+                <div className="absolute top-4 left-2">
+                  <MdEmail size={18} color="#828282" />
                 </div>
               </div>
               <div className="grid my-5 relative">
@@ -82,10 +82,10 @@ export default function Login() {
                   type="password"
                   placeholder="Password"
                   name="password"
-                  className="border  p-4 pl-8 text-sm rounded"
+                  className="border  p-3.5 pl-8 text-sm rounded"
                 />
-                <div className="absolute top-5 left-2">
-                  <MdLock color="#828282" />
+                <div className="absolute top-3.5 left-2">
+                  <MdLock size={18}  color="#828282" />
                 </div>
               </div>
               {loading ? (

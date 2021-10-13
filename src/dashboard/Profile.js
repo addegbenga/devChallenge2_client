@@ -8,7 +8,7 @@ export default function Profile() {
   return (
     <div>
       <Navbar />
-      <div className=" md:w-3/5 md:m-auto md:mt-26 mt-28">
+      <div className=" md:w-3/5 md:m-auto md:mt-26 mt-32">
         <div className="mt-7 flex flex-col items-center">
           <h1 className="text-xl mb-2">Personal info</h1>
           <p style={{ color: "#828282" }}>
