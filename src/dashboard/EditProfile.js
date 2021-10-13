@@ -67,12 +67,12 @@ export default function EditProfile() {
           >
             <Form>
               <div className="grid mb-6">
-                <label className="text-sm mb-1" htmlFor="name">
+                <label className="text-sm mb-1.5" htmlFor="name">
                   Name
                 </label>
                 <MyTextInput
                   style={{ fontSize: "13px" }}
-                  className="border p-3 rounded"
+                  className="border p-3.5 rounded"
                   placeholder="Enter your name"
                   type="text"
                   id="name"
@@ -81,12 +81,12 @@ export default function EditProfile() {
                 />
               </div>
               <div className="grid mb-6">
-                <label className="text-sm  mb-1" htmlFor="bio">
+                <label className="text-sm  mb-1.5" htmlFor="bio">
                   Bio
                 </label>
                 <MytextArea
                   style={{ fontSize: "13px" }}
-                  className="border p-3  rounded"
+                  className="border p-3.5  rounded"
                   placeholder="Enter your bio"
                   rows="7"
                   type="text"
@@ -95,13 +95,13 @@ export default function EditProfile() {
                 />
               </div>
               <div className="grid mb-6">
-                <label className="text-sm  mb-1" htmlFor="phone">
+                <label className="text-sm  mb-1.5" htmlFor="phone">
                   Phone
                 </label>
                 <MyTextInput
                   style={{ fontSize: "13px" }}
                   placeholder="Enter your number"
-                  className="p-3 border rounded"
+                  className="p-3.5 border rounded"
                   type="number"
                   autoComplete="true"
                   id="phone"
@@ -109,13 +109,13 @@ export default function EditProfile() {
                 />
               </div>
               <div className="grid mb-6">
-                <label className="text-sm  mb-1" htmlFor="email">
+                <label className="text-sm  mb-1.5" htmlFor="email">
                   Email
                 </label>
                 <MyTextInput
                   autoComplete="true"
                   style={{ fontSize: "13px" }}
-                  className="p-3 border rounded"
+                  className="p-3.5 border rounded"
                   placeholder="Enter your email"
                   type="email"
                   id="email"
@@ -123,13 +123,13 @@ export default function EditProfile() {
                 />
               </div>
               <div className="grid mb-6 md-mb-0">
-                <label className="text-sm  mb-1" htmlFor="password">
+                <label className="text-sm  mb-1.5" htmlFor="password">
                   password
                 </label>
                 <MyTextInput
                   autoComplete="true"
                   style={{ fontSize: "13px" }}
-                  className="p-3 border rounded "
+                  className="p-3.5 border rounded "
                   placeholder="Enter your new password"
                   type="password"
                   id="password"
