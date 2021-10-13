@@ -8,12 +8,15 @@
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://myprofile007.netlify.app">
       Demo
     </a>
     <span> | </span>
-    <a href="https://myprofile007.netlify.app">
-      Solution
+    <a href="https://github.com/addegbenga/devChallenge2_client">
+      Solution for Client
+    </a>
+    <a href="https://github.com/addegbenga/devChallenge1">
+      Solution for Server
     </a>
     <span> | </span>
     <a href="https://investondaba.notion.site/Fullstack-Intermediate-Test-bffec121436f45ebac844fda2aa747ca">
@@ -37,13 +40,19 @@
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![screenshot](https://raw.githubusercontent.com/addegbenga/devChallenge2/main/public/authshot.png?raw=true")
 
 Introduce your projects by taking a screenshot, video recordings or a gif. Try to tell us about the solution you built by answering the following:
 
 - Where can I see your demo?
 
+    <a href="https://myprofile007.netlify.app">
+      Demo
+    </a>
+
 - What was your experience building it.
+
+
 
 ### Built With
 
