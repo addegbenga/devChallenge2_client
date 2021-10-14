@@ -53,11 +53,11 @@ export default function EditProfile() {
 
           <Formik
             initialValues={{
-              email: "",
+              email: userDetails.email,
               password: "",
-              bio: "",
-              phone: "",
-              name: "",
+              bio: userDetails.bio,
+              phone: userDetails.phone,
+              name: userDetails.name,
               image: "",
             }}
             validationSchema={Yup.object({
@@ -82,7 +82,7 @@ export default function EditProfile() {
                   style={{ width: "200px" }}
                   className="custom-file-upload relative "
                 >
-                  <label style={{ width: "100px" }}>
+                  <label style={{ width: "150px" }}>
                     <input
                       style={{ display: "none" }}
                       type="file"
@@ -111,7 +111,10 @@ export default function EditProfile() {
                           <BsFillCameraFill color="white" size={29} />
                         </div>
                       </div>
-                      <p style={{ color: "#828282" }} className="text-sm ml-5 cursor-pointer">
+                      <p
+                        style={{ color: "#828282" }}
+                        className="text-sm ml-5 cursor-pointer"
+                      >
                         Change photo
                       </p>
                     </div>
