@@ -87,6 +87,7 @@ export default function EditProfile() {
                       style={{ display: "none" }}
                       type="file"
                       name="image"
+                      accept=".png, .jpg, .jpeg"
                       className="w-10 absolute"
                       id="image"
                       onChange={(e) => loadFile(e, props)}
@@ -110,7 +111,7 @@ export default function EditProfile() {
                           <BsFillCameraFill color="white" size={29} />
                         </div>
                       </div>
-                      <p style={{ color: "#828282" }} className="text-sm ml-5">
+                      <p style={{ color: "#828282" }} className="text-sm ml-5 cursor-pointer">
                         Change photo
                       </p>
                     </div>
