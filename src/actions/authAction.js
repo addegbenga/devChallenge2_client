@@ -18,7 +18,7 @@ import { api } from "../utils/api";
 
 export const loadUser = () => async (dispatch) => {
   try {
-    const response = await api.get(`/api/v1/auth/me`);
+    const response = await api.get(`v1/auth/me`);
 
     dispatch({
       type: LOAD_USER,
@@ -34,7 +34,7 @@ export const loadUser = () => async (dispatch) => {
 
 export const googleLogin = (body) => async (dispatch) => {
   try {
-    const response = await api.post(`/api/v1/auth/google`, body);
+    const response = await api.post(`/v1/auth/google`, body);
     dispatch({
       type: GOOGLE_LOGIN,
       payload: response.data,
@@ -53,7 +53,7 @@ export const loginUser = (body) => async (dispatch) => {
     dispatch({
       type: LOADING,
     });
-    const response = await api.post(`/api/v1/auth/login`, body);
+    const response = await api.post(`/v1/auth/login`, body);
     dispatch({
       type: LOGIN_USER,
       payload: response.data,
@@ -72,7 +72,7 @@ export const registerUser = (body) => async (dispatch) => {
     dispatch({
       type: LOADING,
     });
-    const response = await api.post(`/api/v1/auth/register`, body);
+    const response = await api.post(`/v1/auth/register`, body);
     dispatch({
       type: REGISTER_USER,
       payload: response.data,
@@ -90,7 +90,7 @@ export const editUser = (body) => async (dispatch) => {
     dispatch({
       type: LOADING,
     });
-    const response = await api.post(`/api/v1/auth/edit`, body);
+    const response = await api.post(`/v1/auth/edit`, body);
     dispatch({
       type: EDIT_USER_DETAILS,
       payload: response.data.data,

@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "../nav/Navbar";
 import { Link } from "react-router-dom";
-import avatar from "../assets/avatar.jpg";
 import { useSelector } from "react-redux";
 export default function Profile() {
   const userDetails = useSelector((state) => state.auth.user);
@@ -36,31 +35,29 @@ export default function Profile() {
           <div className="md:h-80 md:overflow-y-scroll">
             <div className="flex justify-between items-center border-b pb-2 px-3 md:px-8 ">
               <h2 style={{ color: "#828282", fontSize: "13px" }}>PHOTO</h2>
-              <img src={avatar} className="h-20 w-20 rounded-lg" alt="avt" />
+
+              {userDetails && (
+                <img
+                  src={userDetails.avatarUrl}
+                  className="h-20 w-20 rounded-lg"
+                  alt="avt"
+                />
+              )}
             </div>
             <div className="flex py-6 border-b justify-between px-3 md:px-8  ">
               <h2 style={{ color: "#828282", fontSize: "13px" }}>NAME</h2>
-              {userDetails ? (
-                <p className="text-sm"> {userDetails.name}</p>
-              ) : (
-                <p className="text-sm"> Add a name</p>
-              )}
+              {userDetails && <p className="text-sm"> {userDetails.name}</p>}
             </div>
             <div className="flex border-b py-6 justify-between px-3 md:px-8 ">
               <h2 style={{ color: "#828282", fontSize: "13px" }}>BIO</h2>
-              {userDetails ? (
+
+              {userDetails && (
                 <p className="text-sm truncate">{userDetails.bio}</p>
-              ) : (
-                <p className="text-sm truncate">
-                  write a short descriptive bio about your self
-                </p>
               )}
             </div>
             <div className="flex py-6 justify-between border-b px-3 md:px-8 ">
               <h2 style={{ color: "#828282", fontSize: "13px" }}>EMAIL</h2>
-              {userDetails ? (
-                <p className="text-sm">{userDetails.email}</p>
-              ) : null}
+              {userDetails && <p className="text-sm">{userDetails.email}</p>}
             </div>
             <div className="flex py-6 justify-between border-b px-3 md:px-8 ">
               <h2 style={{ color: "#828282", fontSize: "13px" }}>PASSWORD</h2>

@@ -6,10 +6,12 @@ import { HiUserCircle, HiUsers } from "react-icons/hi";
 import { RiLoginBoxLine } from "react-icons/ri";
 import avatar from "../assets/avatar.jpg";
 import { Popover, Transition } from "@headlessui/react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { LOGOUT_USER } from "../actions/types";
 export default function Navbar() {
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.auth.user);
+
   return (
     <div className="fixed w-full bg-white z-10 top-0 ">
       <div className="bg-white border-b py-5">
@@ -20,13 +22,16 @@ export default function Navbar() {
               {({ open }) => (
                 <>
                   <Popover.Button className="ml-2 flex items-center  ">
-                    <img
-                      src={avatar}
-                      className="w-8 h-8 rounded mr-1"
-                      alt="avatar"
-                    />
+                    {user && (
+                      <img
+                        src={user.avatarUrl}
+                        className="w-8 h-8 rounded mr-1"
+                        alt="avatar"
+                      />
+                    )}
+
                     <div className="flex items-center hidden md:block">
-                      <p className="text-xs">Xamarin star</p>
+                      {user ? <p className="text-xs">{user.name}</p> : null}
                     </div>
                     <div
                       className={`${

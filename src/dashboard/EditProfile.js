@@ -1,18 +1,38 @@
 import React from "react";
 import Nav from "../nav/Navbar";
-import avatar from "../assets/avatar.jpg";
 import { useHistory } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { IoChevronBackSharp } from "react-icons/io5";
 import { editUser } from "../actions/authAction";
 import { Formik, Form } from "formik";
+import { BsFillCameraFill } from "react-icons/bs";
 import * as Yup from "yup";
 import { MyTextInput, MytextArea } from "../form/myForm";
 export default function EditProfile() {
   const loading = useSelector((state) => state.auth.apiloading);
   const history = useHistory();
-  const dispatch = useDispatch();
+  const userDetails = useSelector((state) => state.auth.user);
 
+  const dispatch = useDispatch();
+  var loadFile = function (event, props) {
+    var reader = new FileReader();
+    reader.onload = function () {
+      var output = document.getElementById("output");
+      output.src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+    props.setFieldValue("image", event.currentTarget.files[0]);
+  };
+
+  const rebuildData = (values, prop) => {
+    let formData = new FormData();
+    formData.append("name", values.name);
+    formData.append("email", values.email);
+    formData.append("password", values.password);
+    formData.append("bio", values.bio);
+    formData.append("image", values.image);
+    return formData;
+  };
   return (
     <div>
       <Nav />
@@ -30,12 +50,7 @@ export default function EditProfile() {
               Changes will be reflected to every services
             </p>
           </div>
-          <div className="flex items-center pb-5">
-            <img src={avatar} className="h-20 w-20 rounded-lg" alt="avat" />
-            <p style={{ color: "#828282" }} className="text-sm ml-5">
-              Change photo
-            </p>
-          </div>
+
           <Formik
             initialValues={{
               email: "",
@@ -43,6 +58,7 @@ export default function EditProfile() {
               bio: "",
               phone: "",
               name: "",
+              image: "",
             }}
             validationSchema={Yup.object({
               email: Yup.string()
@@ -54,98 +70,133 @@ export default function EditProfile() {
               phone: Yup.number(),
             })}
             onSubmit={(values, actions) => {
-              const data = {
-                email: values.email,
-                password: values.password,
-                bio: values.bio,
-                phone: values.phone,
-                name: values.name,
-              };
+              console.log(values);
+              const data = rebuildData(values);
 
               dispatch(editUser(data));
             }}
           >
-            <Form>
-              <div className="grid mb-6">
-                <label className="text-sm mb-1.5" htmlFor="name">
-                  Name
-                </label>
-                <MyTextInput
-                  style={{ fontSize: "13px" }}
-                  className="border p-3.5 rounded"
-                  placeholder="Enter your name"
-                  type="text"
-                  id="name"
-                  autoComplete="true"
-                  name="name"
-                />
-              </div>
-              <div className="grid mb-6">
-                <label className="text-sm  mb-1.5" htmlFor="bio">
-                  Bio
-                </label>
-                <MytextArea
-                  style={{ fontSize: "13px" }}
-                  className="border p-3.5  rounded"
-                  placeholder="Enter your bio"
-                  rows="7"
-                  type="text"
-                  id="bio"
-                  name="bio"
-                />
-              </div>
-              <div className="grid mb-6">
-                <label className="text-sm  mb-1.5" htmlFor="phone">
-                  Phone
-                </label>
-                <MyTextInput
-                  style={{ fontSize: "13px" }}
-                  placeholder="Enter your number"
-                  className="p-3.5 border rounded"
-                  type="number"
-                  autoComplete="true"
-                  id="phone"
-                  name="phone"
-                />
-              </div>
-              <div className="grid mb-6">
-                <label className="text-sm  mb-1.5" htmlFor="email">
-                  Email
-                </label>
-                <MyTextInput
-                  autoComplete="true"
-                  style={{ fontSize: "13px" }}
-                  className="p-3.5 border rounded"
-                  placeholder="Enter your email"
-                  type="email"
-                  id="email"
-                  name="email"
-                />
-              </div>
-              <div className="grid mb-6 md-mb-0">
-                <label className="text-sm  mb-1.5" htmlFor="password">
-                  password
-                </label>
-                <MyTextInput
-                  autoComplete="true"
-                  style={{ fontSize: "13px" }}
-                  className="p-3.5 border rounded "
-                  placeholder="Enter your new password"
-                  type="password"
-                  id="password"
-                  name="password"
-                />
-              </div>
-              {loading ? (
-                <button className="bg-blue-500 px-8 py-2 text-white text-sm rounded mt-4">
-                  loading...
-                </button>
-              ) : (
-                <button className="bg-blue-500 px-8 py-2 text-white text-sm rounded mt-4">
-                  Save
-                </button>
-              )}
-            </Form>
+            {(props) => (
+              <Form>
+                <div
+                  style={{ width: "200px" }}
+                  className="custom-file-upload relative "
+                >
+                  <label style={{ width: "100px" }}>
+                    <input
+                      style={{ display: "none" }}
+                      type="file"
+                      name="image"
+                      className="w-10 absolute"
+                      id="image"
+                      onChange={(e) => loadFile(e, props)}
+                      autoComplete="true"
+                    />
+                    <div className="flex items-center pb-5 ">
+                      <div className="relative">
+                        {userDetails && (
+                          <img
+                            src={userDetails.avatarUrl}
+                            id="output"
+                            className="h-20 w-full cursor-pointer rounded-lg"
+                            alt="avat"
+                          />
+                        )}
+
+                        <div
+                          style={{ top: "27px", left: "25px" }}
+                          className="absolute cursor-pointer"
+                        >
+                          <BsFillCameraFill color="white" size={29} />
+                        </div>
+                      </div>
+                      <p style={{ color: "#828282" }} className="text-sm ml-5">
+                        Change photo
+                      </p>
+                    </div>
+                  </label>
+                </div>
+                <div className="grid mb-6">
+                  <label className="text-sm mb-1.5" htmlFor="name">
+                    Name
+                  </label>
+                  <MyTextInput
+                    style={{ fontSize: "13px" }}
+                    className="border p-3.5 rounded"
+                    placeholder="Enter your name"
+                    type="text"
+                    id="name"
+                    autoComplete="true"
+                    name="name"
+                  />
+                </div>
+                <div className="grid mb-6">
+                  <label className="text-sm  mb-1.5" htmlFor="bio">
+                    Bio
+                  </label>
+                  <MytextArea
+                    style={{ fontSize: "13px" }}
+                    className="border p-3.5  rounded"
+                    placeholder="Enter your bio"
+                    rows="7"
+                    type="text"
+                    id="bio"
+                    name="bio"
+                  />
+                </div>
+                <div className="grid mb-6">
+                  <label className="text-sm  mb-1.5" htmlFor="phone">
+                    Phone
+                  </label>
+                  <MyTextInput
+                    style={{ fontSize: "13px" }}
+                    placeholder="Enter your number"
+                    className="p-3.5 border rounded"
+                    type="number"
+                    autoComplete="true"
+                    id="phone"
+                    name="phone"
+                  />
+                </div>
+                <div className="grid mb-6">
+                  <label className="text-sm  mb-1.5" htmlFor="email">
+                    Email
+                  </label>
+                  <MyTextInput
+                    autoComplete="true"
+                    style={{ fontSize: "13px" }}
+                    className="p-3.5 border rounded"
+                    placeholder="Enter your email"
+                    type="email"
+                    id="email"
+                    name="email"
+                  />
+                </div>
+                <div className="grid mb-6 md-mb-0">
+                  <label className="text-sm  mb-1.5" htmlFor="password">
+                    password
+                  </label>
+                  <MyTextInput
+                    autoComplete="true"
+                    style={{ fontSize: "13px" }}
+                    className="p-3.5 border rounded "
+                    placeholder="Enter your new password"
+                    type="password"
+                    id="password"
+                    name="password"
+                  />
+                </div>
+                {loading ? (
+                  <button className="bg-blue-500 px-8 py-2 text-white text-sm rounded mt-4">
+                    loading...
+                  </button>
+                ) : (
+                  <button className="bg-blue-500 px-8 py-2 text-white text-sm rounded mt-4">
+                    Save
+                  </button>
+                )}
+              </Form>
+            )}
           </Formik>
         </div>
       </div>
