@@ -79,8 +79,7 @@ export default function EditProfile() {
             {(props) => (
               <Form>
                 <div
-                  style={{ width: "30%" }}
-                  className="custom-file-upload relative "
+                  className="custom-file-upload relative w-48 md:w-1/3"
                 >
                   <label>
                     <input
