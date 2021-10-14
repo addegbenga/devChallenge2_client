@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { AiFillCaretDown } from "react-icons/ai";
 import { HiUserCircle, HiUsers } from "react-icons/hi";
 import { RiLoginBoxLine } from "react-icons/ri";
-import avatar from "../assets/avatar.jpg";
 import { Popover, Transition } from "@headlessui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { LOGOUT_USER } from "../actions/types";
