@@ -32,7 +32,7 @@ export default function Profile() {
               <Link to="/edit"> Edit</Link>
             </button>
           </div>
-          <div className="md:h-80 md:overflow-y-scroll">
+          <div>
             <div className="flex justify-between items-center border-b pb-2 px-3 md:px-8 ">
               <h2 style={{ color: "#828282", fontSize: "13px" }}>PHOTO</h2>
 
