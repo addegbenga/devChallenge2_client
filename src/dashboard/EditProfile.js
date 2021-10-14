@@ -79,10 +79,10 @@ export default function EditProfile() {
             {(props) => (
               <Form>
                 <div
-                  style={{ width: "200px" }}
+                  style={{ width: "30%" }}
                   className="custom-file-upload relative "
                 >
-                  <label style={{ width: "150px" }}>
+                  <label>
                     <input
                       style={{ display: "none" }}
                       type="file"
@@ -93,14 +93,14 @@ export default function EditProfile() {
                       onChange={(e) => loadFile(e, props)}
                       autoComplete="true"
                     />
-                    <div className="flex items-center pb-5 ">
+                    <div className="flex items-center justify-between pb-5 ">
                       <div className="relative">
                         {userDetails && (
                           <img
                             src={userDetails.avatarUrl}
                             id="output"
-                            className="h-20 w-full cursor-pointer rounded-lg"
-                            alt="avat"
+                            className="h-20 w-20 cursor-pointer rounded-lg"
+                            alt="avatar"
                           />
                         )}
 
